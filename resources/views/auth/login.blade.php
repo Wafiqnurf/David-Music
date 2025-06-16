@@ -41,7 +41,7 @@
                         <span class="checkmark"></span>
                         Ingat saya
                     </label>
-                    <a href="#" class="forgot-password">Lupa password?</a>
+                    <!-- <a href="#" class="forgot-password">Lupa password?</a> -->
                 </div>
 
                 <button type="submit" class="auth-btn">Masuk</button>
