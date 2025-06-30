@@ -114,12 +114,5 @@
         <div class="stat-number">{{ $courses->sum(function($course) { return $course->enrollments->count(); }) }}</div>
         <div class="stat-label">Total Peserta</div>
     </div>
-
-    <div class="stat-card info">
-        <div class="stat-number">
-            {{ $courses->avg(function($course) { return $course->enrollments->count(); }) ? number_format($courses->avg(function($course) { return $course->enrollments->count(); }), 1) : 0 }}
-        </div>
-        <div class="stat-label">Rata-rata Peserta</div>
-    </div>
 </div>
 @endsection

@@ -128,28 +128,4 @@
         </div>
     </div>
 </div>
-
-<!-- Quick Actions -->
-<div class="card">
-    <div class="card-header">
-        <i class="fas fa-bolt"></i>
-        Aksi Cepat
-    </div>
-    <div class="card-body">
-        <div class="d-flex" style="gap: 1rem; flex-wrap: wrap;">
-            <a href="{{ route('admin.courses.create') }}" class="btn btn-success">
-                <i class="fas fa-plus"></i> Tambah Kelas Baru
-            </a>
-            <a href="{{ route('admin.tests.create') }}" class="btn btn-primary">
-                <i class="fas fa-plus"></i> Buat Test Baru
-            </a>
-            <a href="{{ route('admin.users.create') }}" class="btn btn-warning">
-                <i class="fas fa-user-plus"></i> Tambah Pengguna
-            </a>
-            <a href="{{ route('admin.test-results.index') }}" class="btn btn-info">
-                <i class="fas fa-chart-bar"></i> Lihat Laporan
-            </a>
-        </div>
-    </div>
-</div>
 @endsection

@@ -27,15 +27,6 @@
         <div class="stat-number">{{ $test->results->count() }}</div>
         <div class="stat-label">Total Peserta</div>
     </div>
-    <div class="stat-card warning">
-        <div class="stat-number">{{ $test->results->where('score', '>=', $test->passing_score)->count() }}</div>
-        <div class="stat-label">Lulus</div>
-    </div>
-    <div class="stat-card info">
-        <div class="stat-number">{{ $test->results->count() > 0 ? number_format($test->results->avg('score'), 1) : 0 }}
-        </div>
-        <div class="stat-label">Rata-rata Nilai</div>
-    </div>
 </div>
 
 <div class="card mb-4">

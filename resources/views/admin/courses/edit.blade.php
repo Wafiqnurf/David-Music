@@ -112,9 +112,6 @@
                 <i class="fas fa-arrow-left"></i> Kembali
             </a>
             <div>
-                <a href="{{ route('admin.courses.show', $course) }}" class="btn btn-info">
-                    <i class="fas fa-eye"></i> Lihat Detail
-                </a>
                 <button type="submit" form="course-form" class="btn btn-success">
                     <i class="fas fa-save"></i> Update Kelas
                 </button>

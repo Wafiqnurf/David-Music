@@ -35,14 +35,6 @@
                 <span class="text-primary">{{ $questions->count() }}</span>
             </div>
             <div class="col-md-3">
-                <strong>Durasi:</strong><br>
-                <span class="text-info">{{ $test->duration_minutes }} menit</span>
-            </div>
-            <div class="col-md-3">
-                <strong>Nilai Lulus:</strong><br>
-                <span class="text-warning">{{ $test->passing_score }}%</span>
-            </div>
-            <div class="col-md-3">
                 <strong>Status:</strong><br>
                 @if($questions->count() > 0)
                 <span class="badge badge-success">Siap Digunakan</span>

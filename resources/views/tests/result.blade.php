@@ -16,35 +16,64 @@
             </div>
 
             <div class="score-display">
-                <span class="score-number">{{ $result->score }}</span>
+                @php
+                $scoreColor = '';
+                if($result->score < 40) {
+                    $scoreColor='background: linear-gradient(135deg, #ff6b6b, #ff8e8e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;'
+                    ; } elseif($result->score >= 40 && $result->score <= 70) {
+                        $scoreColor='background: linear-gradient(135deg, #4ecdc4, #45b7aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;'
+                        ; } else {
+                        $scoreColor='background: linear-gradient(135deg, #45b7d1, #96c93d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;'
+                        ; } @endphp <span class="score-number" style="{{ $scoreColor }}">{{ $result->score }}</span>
             </div>
 
-            <div class="score-details">
-                <p><strong>Jawaban Benar:</strong> {{ $result->correct_answers }} dari {{ $result->total_questions }}
-                </p>
-                <p><strong>Persentase:</strong> {{ $result->score }}%</p>
-
-                @if($result->admin_review)
-                <div class="admin-review">
-                    <h4>Review dari Pengajar:</h4>
-                    <div class="review-content">
-                        {{ $result->admin_review }}
-                    </div>
-                </div>
-                @else
-                <div class="review-pending">
-                    <p><em>Review dari pengajar akan muncul di sini setelah video Anda ditinjau.</em></p>
-                </div>
-                @endif
+            {{-- Level Classification --}}
+            <div class="level-classification">
+                @if($result->score < 40) <div class="level-badge beginner">
+                    <i class="level-icon">🎵</i>
+                    <span class="level-text">BEGINNER</span>
             </div>
+            <p class="level-description">Anda baru memulai perjalanan musik Anda. Terus berlatih!</p>
+            @elseif($result->score >= 40 && $result->score <= 70) <div class="level-badge intermediate">
+                <i class="level-icon">🎼</i>
+                <span class="level-text">INTERMEDIATE</span>
+        </div>
+        <p class="level-description">Kemampuan musik Anda berkembang dengan baik. Lanjutkan!</p>
+        @else
+        <div class="level-badge advanced">
+            <i class="level-icon">🎹</i>
+            <span class="level-text">ADVANCED</span>
+        </div>
+        <p class="level-description">Excellent! Anda memiliki pemahaman musik yang sangat baik!</p>
+        @endif
+    </div>
 
-            <div class="action-buttons">
-                <button onclick="window.location.href='{{ route('profile.show') }}'" class="result-btn primary">Lihat
-                    Profil</button>
-                <button onclick="window.location.href='{{ route('courses.index') }}'"
-                    class="result-btn secondary">Kembali ke Kelas</button>
+    <div class="score-details">
+        <p><strong>Jawaban Benar:</strong> {{ $result->correct_answers }} dari {{ $result->total_questions }}
+        </p>
+        <p><strong>Persentase:</strong> {{ $result->score }}%</p>
+
+        @if($result->admin_review)
+        <div class="admin-review">
+            <h4>Review dari Pengajar:</h4>
+            <div class="review-content">
+                {{ $result->admin_review }}
             </div>
         </div>
+        @else
+        <div class="review-pending">
+            <p><em>Review dari pengajar akan muncul di sini setelah video Anda ditinjau.</em></p>
+        </div>
+        @endif
+    </div>
+
+    <div class="action-buttons">
+        <button onclick="window.location.href='{{ route('profile.show') }}'" class="result-btn primary">Lihat
+            Profil</button>
+        <button onclick="window.location.href='{{ route('courses.index') }}'" class="result-btn secondary">Kembali ke
+            Kelas</button>
+    </div>
+    </div>
     </div>
 </section>
 @endsection
@@ -64,6 +93,56 @@
 .score-details {
     margin-top: 20px;
     text-align: left;
+}
+
+/* Level Classification Styles */
+.level-classification {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.level-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.level-badge:hover {
+    transform: translateY(-2px);
+}
+
+.level-badge.beginner {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+}
+
+.level-badge.intermediate {
+    background: linear-gradient(135deg, #4ecdc4, #45b7aa);
+    color: white;
+}
+
+.level-badge.advanced {
+    background: linear-gradient(135deg, #45b7d1, #96c93d);
+    color: white;
+}
+
+.level-icon {
+    font-size: 24px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.level-description {
+    color: #666;
+    font-style: italic;
+    margin-top: 8px;
+    font-size: 14px;
 }
 
 .pass-status {
@@ -156,6 +235,23 @@
     box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
 }
 
+.result-btn.retry {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.result-btn.retry:hover {
+    background-color: #e8681d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(253, 126, 20, 0.3);
+}
+
+.score-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #333;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .score-card {
@@ -171,12 +267,15 @@
         width: 100%;
         max-width: 250px;
     }
-}
 
-/* Debug styles - remove after testing */
-.result-btn:active {
-    transform: translateY(0);
-    background-color: #28a745 !important;
+    .level-badge {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .score-number {
+        font-size: 3rem;
+    }
 }
 </style>
 @endsection
@@ -186,15 +285,6 @@
 // Test route dan debug
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Page loaded');
-
-    // Test dengan URL langsung terlebih dahulu
-    const testUrls = [
-        '/profile',
-        '{{ url("/profile") }}',
-        '{{ route("profile.show") }}'
-    ];
-
-    console.log('Testing URLs:', testUrls);
 
     // Tambahkan event listener untuk button
     const buttons = document.querySelectorAll('.result-btn');
@@ -224,6 +314,17 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     console.log('Run testNavigation() in console to test manual navigation');
+
+    // Level classification animation
+    const levelBadge = document.querySelector('.level-badge');
+    if (levelBadge) {
+        setTimeout(() => {
+            levelBadge.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                levelBadge.style.transform = 'scale(1)';
+            }, 200);
+        }, 500);
+    }
 });
 </script>
 @endsection
