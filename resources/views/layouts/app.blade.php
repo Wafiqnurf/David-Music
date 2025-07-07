@@ -38,6 +38,7 @@
         </div>
     </header>
 
+
     <!-- Alert Messages -->
     @if(session('success'))
     <div class="alert alert-success">
@@ -54,12 +55,43 @@
     <!-- Main Content -->
     @yield('content')
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Contact Section -->
+    <section class="contact-section">
         <div class="container">
-            <p>Contact us: 081210086130 (David)</p>
+            <h2>KONTAK</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Hotma</h3>
+                            <p>081392626543</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>David</h3>
+                            <p>081210086130</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Alamat</h3>
+                            <p>Grand Vista Cikarang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
     <script src="{{ asset('js/script.js') }}"></script>
     @yield('scripts')
