@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'David Music Course')</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     @yield('styles')
 </head>
 
@@ -55,43 +58,33 @@
     <!-- Main Content -->
     @yield('content')
 
-    <!-- Contact Section -->
-    <section class="contact-section">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <h2>KONTAK</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Hotma</h3>
-                            <p>081392626543</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>David</h3>
-                            <p>081210086130</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>David Music Course</h3>
+                    <p>Menghidupkan Musik, Menginspirasi Jiwa</p>
+                    <p>Pusat pendidikan musik terpercaya di Grand Vista Cikarang</p>
+                    <div class="contact-links">
+                        <a href="https://wa.me/6281392626543" class="wa-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://wa.me/6281210086130" class="wa-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <div class="address">
                             <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Alamat</h3>
-                            <p>Grand Vista Cikarang</p>
+                            <span>Grand Vista Cikarang</span>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 David Music Course. All rights reserved.</p>
+            </div>
         </div>
-    </section>
+    </footer>
 
     <script src="{{ asset('js/script.js') }}"></script>
     @yield('scripts')

@@ -1040,57 +1040,119 @@ body {
     border-bottom: none;
 }
 
-/* Contact Section */
-.contact-section {
-    padding: 20px 0;
-    background: linear-gradient(135deg, #8b2635 0%, #a0392e 100%);
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
     color: white;
+    padding: 50px 0 20px;
+    margin-top: 0;
 }
 
-.contact-section h2 {
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 25px;
-    color: white;
+}
+
+.footer-info h3 {
+    font-size: 2rem;
+    color: #ffeaa7;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 
-.contact-content {
-    max-width: 800px;
-    margin: 0 auto;
+.footer-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.contact-info {
+.contact-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.contact-item {
+.wa-link {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    background: rgba(37, 211, 102, 0.1);
+    border-radius: 50%;
+    border: 2px solid rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.wa-link:hover {
+    background: rgba(37, 211, 102, 0.2);
+    border-color: rgba(37, 211, 102, 0.5);
+    transform: translateY(-3px);
+}
+
+.wa-link i {
+    font-size: 1.5rem;
+    color: #25d366;
+}
+
+.address {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.contact-icon {
-    font-size: 2rem;
-    color: #fab1a0;
-}
-
-.contact-details h3 {
+.address i {
     font-size: 1.2rem;
-    margin-bottom: 5px;
+    color: #e17055;
 }
 
-.contact-details p {
-    color: #ffeaa7;
+.address span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .wa-link {
+        width: 45px;
+        height: 45px;
+    }
+
+    .wa-link i {
+        font-size: 1.3rem;
+    }
 }
 
 /* Responsive Design */

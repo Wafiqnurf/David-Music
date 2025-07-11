@@ -286,10 +286,354 @@
         </div>
     </div>
 </section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <h2>KONTAK KAMI</h2>
+        <div class="contact-grid">
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.8420207025065!2d107.06144239999999!3d-6.4143394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69970955555555%3A0x5e7e57d4edec8fee!2sGrand%20Vista%20Cikarang!5e0!3m2!1sen!2sid!4v1751908581686!5m2!1sen!2sid"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact-info">
+                <div class="info-section">
+                    <div class="about-section">
+                        <h3><i class="fas fa-music"></i> Tentang David Music Course</h3>
+                        <p>David Music Course adalah lembaga kursus musik terpercaya yang telah berpengalaman dalam
+                            mengajarkan berbagai alat musik. Kami menyediakan pembelajaran musik yang berkualitas dengan
+                            instruktur berpengalaman untuk semua tingkat, dari pemula hingga mahir.</p>
+                        <p>Dengan metode pembelajaran yang menyenangkan dan fasilitas yang lengkap, kami membantu Anda
+                            mewujudkan impian bermusik dengan profesional.</p>
+                    </div>
+
+                    <div class="bottom-sections">
+                        <div class="schedule-section">
+                            <h3><i class="fas fa-clock"></i> Jam Operasional</h3>
+                            <div class="schedule-grid">
+                                <div class="schedule-item">
+                                    <span class="day">Senin - Jumat</span>
+                                    <span class="time">09:00 - 21:00</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="day">Sabtu - Minggu</span>
+                                    <span class="time">08:00 - 18:00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="whatsapp-section">
+                            <h3><i class="fab fa-whatsapp"></i> Hubungi Kami</h3>
+                            <div class="whatsapp-content">
+                                <div class="phone-number">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+62 812-3456-7890</span>
+                                </div>
+                                <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20bertanya%20tentang%20kursus%20musik"
+                                    class="whatsapp-btn" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>Chat WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 @section('styles')
 <style>
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e17055 0%, #a0392e 100%);
+    color: white;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.contact-map {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.contact-map iframe {
+    border-radius: 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-section .about-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-section .about-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #d63031;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-section .about-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #2d3436;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.contact-section .bottom-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-section .schedule-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.contact-section .schedule-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #d63031;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-section .schedule-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-section .schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(116, 185, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.schedule-item:hover {
+    transform: translateY(-2px);
+}
+
+.schedule-item .day {
+    font-weight: 600;
+}
+
+.schedule-item .time {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.whatsapp-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #d63031;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.whatsapp-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.phone-number {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #2d3436;
+    font-weight: 500;
+    border-left: 4px solid #25D366;
+}
+
+.phone-number i {
+    color: #25D366;
+    font-size: 1.1rem;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    border: none;
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #128C7E, #0d7377);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp-btn i {
+    font-size: 1.3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    color: #ffeaa7;
+    min-width: 50px;
+}
+
+.contact-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.contact-details p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+/* Responsive Design untuk Contact Section */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-map iframe {
+        height: 300px;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-section .about-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-section .about-section p {
+        font-size: 0.9rem;
+    }
+
+    .contact-section .bottom-sections {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-section .schedule-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .whatsapp-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .contact-section.info-section {
+        gap: 20px;
+    }
+
+    .contact-section .about-section,
+    .schedule-section,
+    .whatsapp-section {
+        padding: 20px;
+    }
+}
+
 /* About Section */
 .about-section {
     padding: 80px 0;
